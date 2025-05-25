@@ -1,0 +1,98 @@
+/* General Body Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e6ffe6; /* Light green background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Photosynthesis Animation Container */
+#photosynthesis-container {
+    width: 600px;
+    height: 400px;
+    border: 1px solid #999; /* Slightly darker border */
+    position: relative; /* For absolute positioning of SVGs inside */
+    background-color: #f0f8ff; /* AliceBlue, a very light blue, like a sky */
+    overflow: hidden; /* Hide parts of SVGs that might go outside during animation if not careful */
+}
+
+/* General SVG Element Styling within the Container */
+#photosynthesis-container svg {
+    display: block; /* Or inline-block, block makes width/height more straightforward */
+    width: 100px;  /* Default width for SVGs, matches JS */
+    height: 100px; /* Default height for SVGs, matches JS */
+    position: absolute; /* Positioned relative to #photosynthesis-container */
+    /* Transitions will be set by script.js for specific animations,
+       but a default could be here if all SVGs had common transitions.
+       e.g., transition: left 1s ease-in-out, top 1s ease-in-out, opacity 0.5s ease-in-out;
+    */
+}
+
+/* Annotations Area */
+#annotations-container {
+    width: 600px; /* Same width as the animation container */
+    padding: 15px;
+    background-color: #ffffe0; /* LightYellow */
+    border: 1px solid #ccc;
+    margin-top: 20px; /* Space above the annotations box */
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Start Button Styling */
+#start-photosynthesis {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+#start-photosynthesis:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#start-photosynthesis:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Slider Controls Styling */
+.controls-container {
+    display: flex;
+    align-items: center; /* Vertically align items in the control group */
+    margin-top: 15px; /* Space above the slider group */
+    margin-bottom: 15px; /* Space below the slider group */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light grey background for the control area */
+    border-radius: 5px;
+    width: 600px; /* Match other container widths */
+    box-sizing: border-box;
+}
+
+.controls-container label {
+    margin-right: 10px; /* Space between label and slider */
+    font-size: 16px;
+}
+
+#sunlight-slider {
+    flex-grow: 1; /* Allow slider to take up available space */
+    margin-right: 10px; /* Space between slider and value display */
+    cursor: pointer;
+}
+
+#sunlight-value {
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 40px; /* Ensure space for "100%" */
+    text-align: right;
+}
